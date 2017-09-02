@@ -45,16 +45,14 @@ The `LruCache` implements an LRU (Least Recently Used) cache via a `LinkedList` 
 * `SIZE {n}` - sets the cache size to `n`, must only occur as the first operation, outputs:
     - -> `SIZE OK` if this is the first operation, and `n` is an integer > 0.
     - -> `ERROR` otherwise
-    - Complexity:
-    - `O(1)`:
+    - Complexity: `O(1)`:
         - `O(1)` create empty hash map
         - `O(1)` create empty linked list
 * `GET {key}` - gets an item from the cache, marks the item as most recently used, outputs:
     - -> `GOT {value}` if the item is found successfully
     - -> `NOTFOUND` if the item isn't in the cache
     - -> `ERROR` if syntax isn't valid
-    - Complexity:
-    - `O(1)` (amortized):
+    - Complexity: `O(1)` (amortized):
         - `O(1)` (amortized) look up a `LinkedListNode` in the hash map
         - if found
             - `O(1)` remove the `LinkedListNode` from the list
@@ -62,8 +60,7 @@ The `LruCache` implements an LRU (Least Recently Used) cache via a `LinkedList` 
 * `SET {key} {value}` - stores the `value` in the cache under the `key`, marks the item as most recently used, outputs:
     - -> `SET OK` if the item is stored successfully
     - -> `ERROR` if syntax isn't valid
-    - Complexity:
-    - `O(1)` (amortized):
+    - Complexity: `O(1)` (amortized):
         - `O(1)` (amortized) look up a `LinkedListNode` in the hash map
         - if found
             - `O(1)` remove the `LinkedListNode` from the list
@@ -74,5 +71,4 @@ The `LruCache` implements an LRU (Least Recently Used) cache via a `LinkedList` 
             - `O(1)` add the `LinkedListNode` to the hash map
 * `EXIT`
     -> terminates the execution
-    - Complexity:
-    - `O(1)`
+    - Complexity: `O(1)`
